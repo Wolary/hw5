@@ -38,8 +38,6 @@ public class GithubTest {
         //Заходим в Issues и проверяем что они открылись
         $(".repository-content").shouldHave(text("Welcome to issues!"));
 
-        sleep(3000);
-
     }
 
 }

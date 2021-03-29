@@ -7,8 +7,9 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
-public class GithubTest {
+public class LambdaTest {
 
     @BeforeAll
     static void setup() {
@@ -23,20 +24,29 @@ public class GithubTest {
     void githubTest() {
 
         //открываем страницу
-        open(url);
+        step("Открываем сайт", () -> {
+            open(url);
+        });
 
         //заходим в репозиторий
-        $(".header-search-input").click();
-        $(".header-search-input").setValue(repName).pressEnter();
-        $(".repo-list-item").$(byText(userName)).click();
+        step("Заходим в репозиторий", () -> {
+            $(".header-search-input").click();
+            $(".header-search-input").setValue(repName).pressEnter();
+            $(".repo-list-item").$(byText(userName)).click();
+        });
 
         //ищем Issues
-        $(".js-repo-nav").shouldHave(text(findValue));
-        $(".js-repo-nav").$(byText(findValue)).click();
+        step("Ищем и проверяем Issues", () -> {
+            $(".js-repo-nav").shouldHave(text(findValue));
+            $(".js-repo-nav").$(byText(findValue)).click();
+        });
 
 
         //Заходим в Issues и проверяем что они открылись
-        $(".repository-content").shouldHave(text("Welcome to issues!"));
+        step("Заходим в Issues и проверяем что они открылись", () -> {
+            $(".repository-content").shouldHave(text("Welcome to issues!"));
+
+        });
 
         sleep(3000);
 
