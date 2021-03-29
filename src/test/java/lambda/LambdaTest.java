@@ -48,8 +48,6 @@ public class LambdaTest {
 
         });
 
-        sleep(3000);
-
     }
 
 }
