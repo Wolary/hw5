@@ -34,7 +34,6 @@ public class GithubTest {
         $(".js-repo-nav").shouldHave(text(findValue));
         $(".js-repo-nav").$(byText(findValue)).click();
 
-
         //Заходим в Issues и проверяем что они открылись
         $(".repository-content").shouldHave(text("Welcome to issues!"));
 
