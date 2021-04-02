@@ -45,7 +45,6 @@ public class LambdaTest {
         //Заходим в Issues и проверяем что они открылись
         step("Заходим в Issues и проверяем что они открылись", () -> {
             $(".repository-content").shouldHave(text("Welcome to issues!"));
-
         });
 
     }

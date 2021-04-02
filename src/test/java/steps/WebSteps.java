@@ -38,4 +38,5 @@ public class WebSteps {
     public void checkIssues() {
         $(".repository-content").shouldHave(text("Welcome to issues!"));
     }
+
 }
