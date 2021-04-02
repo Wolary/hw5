@@ -20,6 +20,7 @@ public class LambdaTest {
                     repName = "Wolary/hw4",
                     userName = "Wolary",
                     findValue = "Issues";
+
     @Test
     void githubTest() {
 
