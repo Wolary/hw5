@@ -29,6 +29,7 @@ public class LambdaTest {
             open(url);
         });
 //
+        //
         //заходим в репозиторий
         step("Заходим в репозиторий", () -> {
             $(".header-search-input").click();
