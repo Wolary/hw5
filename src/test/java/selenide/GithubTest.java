@@ -14,6 +14,11 @@ public class GithubTest {
             userName = "Wolary",
             findValue = "Issues";
 
+    private String url = "https://github.com/",
+            repName = "Wolary/hw4",
+            userName = "Wolary",
+            findValue = "Issues";
+
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
@@ -22,7 +27,7 @@ public class GithubTest {
     @Test
     void githubTest() {
         open(url);
-
+      
         $(".header-search-input").click();
         $(".header-search-input").setValue(repName).pressEnter();
         $(".repo-list-item").$(byText(userName)).click();

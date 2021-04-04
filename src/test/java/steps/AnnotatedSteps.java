@@ -14,9 +14,10 @@ public class AnnotatedSteps {
     @Feature("Работа с разметкой")
     @Story("Разметка аннотаций")
     @Severity(SeverityLevel.BLOCKER)
-    @Link (name = "Сайт", url = "https://github.com/")
+    @Link(name = "Сайт", url = "https://github.com/")
     @DisplayName("Пример теста")
-        public void testSearch () {
+
+    public void testSearch() {
         steps.openPage();
         steps.openRepository();
         steps.searchIssues();

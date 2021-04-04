@@ -13,18 +13,17 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class WebSteps {
 
-    //сюда выносить неправильно
-    private String  url = "https://github.com/",
+    private String url = "https://github.com/",
             repName = "Wolary/hw4",
             userName = "Wolary",
             findValue = "Issues";
 
-    @Step ("Открываем страницу")
+    @Step("Открываем страницу")
     public void openPage() {
         open(url);
     }
 
-    @Step ("Открываем репозиторий пользователя")
+    @Step("Открываем репозиторий пользователя")
     public void openRepository() {
         $(".header-search-input").click();
         $(".header-search-input").setValue(repName).pressEnter();

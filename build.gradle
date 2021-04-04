@@ -11,26 +11,25 @@ allure {
     useJUnit5 {
         version = "2.13.8"
     }
+}
+repositories {
+    mavenCentral()
+}
 
-    repositories {
-        mavenCentral()
-    }
+def selenideVersion = "5.19.0",
+    junitVersion = "5.7.1"
 
-    def selenideVersion = "5.19.0",
-            junitVersion = "5.7.1"
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:$selenideVersion",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
 
-    dependencies {
-        testImplementation(
-                "com.codeborne:selenide:$selenideVersion",
-                "org.junit.jupiter:junit-jupiter-api:$junitVersion")
-        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
-    }
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
 
-    tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
-    }
-
-    test {
-        useJUnitPlatform()
-    }
+test {
+    useJUnitPlatform()
 }

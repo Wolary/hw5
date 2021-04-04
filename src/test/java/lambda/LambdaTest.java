@@ -11,11 +11,11 @@ import static io.qameta.allure.Allure.step;
 
 public class LambdaTest {
 
-    private String  url = "https://github.com/",
-                    repName = "Wolary/hw4",
-                    userName = "Wolary",
-                    findValue = "Issues";
-    
+    private String url = "https://github.com/",
+            repName = "Wolary/hw4",
+            userName = "Wolary",
+            findValue = "Issues";
+  
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
@@ -23,6 +23,7 @@ public class LambdaTest {
 
     @Test
     void githubTest() {
+
         step("Открываем сайт", () -> {
             open(url);
         });
@@ -40,7 +41,6 @@ public class LambdaTest {
 
         step("Заходим в Issues и проверяем что они открылись", () -> {
             $(".repository-content").shouldHave(text("Welcome to issues!"));
-
         });
     }
 }
