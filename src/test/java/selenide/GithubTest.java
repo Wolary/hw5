@@ -10,15 +10,16 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GithubTest {
 
+    private String url = "https://github.com/",
+            repName = "Wolary/hw4",
+            userName = "Wolary",
+            findValue = "Issues";
+
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
     }
 
-    private String  url = "https://github.com/",
-                    repName = "Wolary/hw4",
-                    userName = "Wolary",
-                    findValue = "Issues";
     @Test
     void githubTest() {
 
@@ -36,7 +37,5 @@ public class GithubTest {
 
         //Заходим в Issues и проверяем что они открылись
         $(".repository-content").shouldHave(text("Welcome to issues!"));
-
     }
-
 }
