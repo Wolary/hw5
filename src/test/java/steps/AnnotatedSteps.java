@@ -7,10 +7,6 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Тест с аннотациями")
 
 public class AnnotatedSteps {
-
-
-
-
     private WebSteps steps = new WebSteps();
 
     @Test
@@ -20,7 +16,6 @@ public class AnnotatedSteps {
     @Severity(SeverityLevel.BLOCKER)
     @Link (name = "Сайт", url = "https://github.com/")
     @DisplayName("Пример теста")
-
         public void testSearch () {
         steps.openPage();
         steps.openRepository();
